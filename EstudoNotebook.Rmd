@@ -1,0 +1,199 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
+
+```{r}
+plot(cars)
+```
+
+cran - Buscar bibliotecas do R
+setwd() -> seta o diretório padrão (working directory)
+getwd() -> fala qual o diretório padrão atual.
+Aqui no notebook os comandos executam em blocos.
+class() -> devolve o tipo de classe de um objeto
+load() -> abre um arquivo
+save() -> salva o objeto no notebook,pra ficar mais fácil de acessar.
+plot() -> função genérica de visualização de dados.
+hist() -> gera um histograma
+boxplot() -> gera boxplot
+
+Caractere - texto
+
+variáveis são declaradas implicitamente
+
+É uma linguagem vetorial, mesmo que tenha um único dado, é criado um vetor de 1 elemento
+
+funções matemáticas nativas -> sqrt(raiz quadrada); sum(soma); log(logaritmo base 10); cos(cosseno); sin(seno); tan(tangente); exp(Exponencial); abs(valor absoluto).
+
+indexado em base 1, começamos a acessar pelo índice 1
+
+'''
+
+```{r}
+x = c(1,2,3,4,5,6);
+x
+x[1]
+```
+
+matriz permite um único tipo de dados.
+linhas e colunas podem ter nomes(que não fazem parte dos dados, são informação sobre)
+
+Data Frame -> semelhante a uma matriz, mas permite tipos de dados diferentes por coluna
+DataFrame$coluna - para acessar uma coluna específica
+
+Lista - Sequencia de objetos de classes diferentes.
+
+Fatores - variáveis categóricas
+
+Funções são semelhantes a de outras linguagens. um verbo seguido de parênteses, pode requerer parâmetros ou não
+R é flexível com argumentos
+
+help(funcao) devolve informações sobre a função. Ela é instalada localmente.
+
+```{r}
+help(sin)
+```
+
+funções mais comuns ->
+head() -> visualiza primeiras linhas do conjunto de dados
+tail() -> visualiza as últimas linhas
+summary() -> resumo estatístico do conmjunto de dados
+file.choose() -> abre uma janela para buscar o arquivo para abrir
+dim() -> devolve o número de linhas e colunas
+length() -> comprimento de um vetor
+colnames() -> devolve os nomes das colunas
+rownames() -> devolve os nomes das linhas
+colbind()-> adiciona uma coluna ao conjunto
+predict() -> pra MachineLearning, prediz comportamento
+
+Formula variáveis dependentes ~ variáveis independentes
+Vendas~Temperatura (prediz a quantidade de vendas dada uma temperatura)
+
+pra importar dados:
+read.csv() -> abre um csv
+pra bancos de dados, pacote RODBC
+odbcDriverConnect() -> conecta ao banco de dados
+sqlQuery() -> realiza uma consulta
+odbcClose() -> encerra a conexão
+
+pacote XLSX 
+read.XLSX
+
+Para outros tipos de dados - Pacote foreign
+
+
+if(condicao){
+
+}else{
+
+}
+
+ifelse(condicao, retornoTrue, retornoFalse)
+
+for(variavel in sequencia){
+
+}
+while(condicao){
+
+}
+Também usamos break e next
+
+
+nome = function(parametros){} -> assim gera uma função. Se não colocar o return ela retorna o último elemento apresentado dentro
+
+
+```{r}
+install.packages("e1071")
+library(e1071)
+```
+
+```{r}
+getwd()
+```
+```{r}
+class(iris)
+```
+```{r}
+#cria uma copia
+iristeste = iris
+
+#salva
+save(iristeste, file="irisTeste.Rdata")
+
+#remove
+rm(iristeste)
+
+iristeste
+
+```
+
+```{r}
+load(file="irisTeste.Rdata")
+
+iristeste
+```
+
+
+```{r}
+x=c(12,34,56,79)
+y=c(1,6,9,14)
+plot(x,y)
+```
+
+
+
+VADeaths[,1] -> traz a primeira coluna inteira
+VADEaths[1,] -> traz a primeira linha
+VADeaths[1:3,] -> traz as três primeiras linhas
+VADeaths[c(1,3,5),] -> traz as linhas 1, 3 e 5
+
+DataFrame age como um banco de dados
+Frame$coluna -> devolve a coluna como um vetor de dados
+Frame['coluna'] -> devolve a coluna formatada (inclusive com os nomes das linhas, se elas tiverem)
+
+```{r}
+ability.cov
+
+#acessando elementos
+ability.cov$cov
+
+ability.cov[1]
+
+class(ability.cov$cov)
+class(ability.cov$center)
+
+ability.cov$cov[,1:3]
+```
+
+
+```{r}
+#fatores
+state.region
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
